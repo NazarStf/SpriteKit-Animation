@@ -11,6 +11,8 @@ import SpriteKit
 class GameScene: SKScene {
 	override func didMove(to view: SKView) {
 		physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
+		let path = UIBezierPath(roundedRect: frame, cornerRadius: 50)
+		physicsBody = SKPhysicsBody(edgeLoopFrom: path.cgPath)
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
